@@ -26,6 +26,7 @@
 #include "timelib.h"
 #include "timelib_private.h"
 
+#ifndef TIMELIB_NO_FS
 #include <sys/stat.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -334,6 +335,7 @@ timelib_tzdb *timelib_zoneinfo(char *directory)
 	}
 	return tmp;
 }
+#endif
 
 void timelib_zoneinfo_dtor(timelib_tzdb *tzdb)
 {

@@ -745,6 +745,7 @@ const timelib_tzdb_index_entry *timelib_timezone_identifiers_list(const timelib_
 
 /* From parse_zoneinfo.c */
 
+#ifndef TIMELIB_NO_FS
 /**
  * Scans the directory and subdirectories of 'directory' for valid time zone files and builds
  * a time zone database out of these files.
@@ -755,6 +756,7 @@ const timelib_tzdb_index_entry *timelib_timezone_identifiers_list(const timelib_
  * with the 'timelib_zoneinfo_dtor' function.
  */
 timelib_tzdb *timelib_zoneinfo(char *directory);
+#endif
 
 /**
  * Frees up the resources as created through 'timelib_zoneinfo'.
